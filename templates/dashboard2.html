@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geo Features Dashboard</title>
+    <style>
+        body { font-family: Arial; margin: 20px; }
+        h1, h2 { color: #333; }
+        .stats { margin-bottom: 20px; }
+        .feature-list { border-collapse: collapse; width: 100%; }
+        .feature-list th, .feature-list td { border: 1px solid #ccc; padding: 8px; }
+    </style>
+</head>
+<body>
+    <h1>Geo Features Dashboard</h1>
+    <div class="stats">
+        <h2>Statistics</h2>
+        <ul>
+            <li>Points: {{ stats.points }}</li>
+            <li>Lines: {{ stats.lines }}</li>
+            <li>Polygons: {{ stats.polygons }}</li>
+        </ul>
+    </div>
+    <div>
+        <h2>Latest Features</h2>
+        <table class="feature-list">
+            <thead>
+                <tr><th>ID</th><th>Type</th></tr>
+            </thead>
+            <tbody>
+                {% for f in features %}
+                    <tr><td>{{ f.id }}</td><td>{{ f.geom_type }}</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
