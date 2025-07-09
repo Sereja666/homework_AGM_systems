@@ -40,6 +40,7 @@ from qgis.core import QgsGeometry, QgsFeature
 from qgis.PyQt.QtCore import QByteArray
 import requests
 import json
+from shapely import wkt
 from PyQt5.QtWidgets import QMessageBox
 
 
@@ -65,16 +66,40 @@ class PostgisToQGIS:
         self.iface.removeToolBarIcon(self.action)
 
 
-        # Основная точка входа — при нажатии на кнопку запускается синхронизация
     def sync(self):
-        # Проверка и создание слоёв Points_synced, Lines_synced, Polygons_synced
         self.ensure_layers()
-        # Очистка от старых данных
+
+        # Ищу новые точки
+        for name in ["Points_synced", "Lines_synced", "Polygons_synced"]:
+            layer = self.get_layer(name)
+            if layer:
+                for f in layer.getFeatures():
+                    # QMessageBox.critical(None, "Окно", f"Проверяю объект {f["id"]} | {f} ")
+
+                    if not f["id"]:  # если объект ещё не отправлялся, тут ищется не None, а  Null
+                        # QMessageBox.critical(None, "Окно", "найден новый объект без ИД")
+                        geom = f.geometry().asWkt()
+                        type_str = name.split('_')[0][:-1].capitalize()
+                        shapely_geom = wkt.loads(geom)
+                        geojson_geom = shapely_geom.__geo_interface__
+                        try:
+                            r = requests.post(f"{API_BASE}/features", json={
+                                "geometry": geojson_geom,
+                                "type": type_str
+                            })
+                            new_id = r.json()["id"]
+                            layer.startEditing()
+                            f["id"] = new_id
+                            layer.updateFeature(f)
+                            layer.commitChanges()
+                        except Exception as e:
+                            QMessageBox.critical(None, "Ошибка при отправке объекта", str(e))
+
+        # отчищаю всё
         self.clear_layers()
 
-        # Загрузка с сервера
+        # Заново рисую
         try:
-            # Получаем список всех объектов с сервера (GET /features)
             resp = requests.get(f"{API_BASE}/features")
             resp.raise_for_status()
             features = resp.json()["features"]
@@ -82,6 +107,7 @@ class PostgisToQGIS:
                 self.add_feature_to_layer(f)
         except Exception as e:
             QMessageBox.critical(None, "Ошибка загрузки", str(e))
+
 
 
 
