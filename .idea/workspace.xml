@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b86b6568-be11-4379-bb51-8f6a68455708" name="Changes" comment="первый">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/домашка_АГМ_Системы.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/домашка_АГМ_Системы.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin_QGIS/postgistoqgis.zip" beforeDir="false" afterPath="$PROJECT_DIR$/plugin_QGIS/postgistoqgis.zip" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plugin_QGIS/postgistoqgis/PostgisToQGIS.py" beforeDir="false" afterPath="$PROJECT_DIR$/plugin_QGIS/postgistoqgis/PostgisToQGIS.py" afterDir="false" />
-    </list>
+    <list default="true" id="b86b6568-be11-4379-bb51-8f6a68455708" name="Changes" comment="+гитигнор" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -70,6 +64,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Python\домашка_АГМ_Системы" />
       <recent name="C:\Python\домашка_АГМ_Системы\plugin_QGIS\postgistoqgis\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -169,7 +164,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1751610178685</updated>
-      <workItem from="1752051251641" duration="6397000" />
+      <workItem from="1752051251641" duration="6904000" />
     </task>
     <task id="LOCAL-00001" summary="первый">
       <option name="closed" value="true" />
@@ -187,7 +182,23 @@
       <option name="project" value="LOCAL" />
       <updated>1751897690340</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="при повторной синхронизации сохраняются новые точки в БД">
+      <option name="closed" value="true" />
+      <created>1752060048522</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752060048522</updated>
+    </task>
+    <task id="LOCAL-00004" summary="+гитигнор">
+      <option name="closed" value="true" />
+      <created>1752060218676</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752060218676</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +206,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="первый" />
-    <option name="LAST_COMMIT_MESSAGE" value="первый" />
+    <MESSAGE value="при повторной синхронизации сохраняются новые точки в БД" />
+    <MESSAGE value="+гитигнор" />
+    <option name="LAST_COMMIT_MESSAGE" value="+гитигнор" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/__$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1752051967512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
